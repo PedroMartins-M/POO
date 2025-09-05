@@ -161,33 +161,25 @@ namespace _01_DeclaracaoClasse
         }
         public double CalcularMedia()
         {
-            double soma = 0; //local que vai acumular a soma das notas.
-            for (int i = 0; i < Notas.Length; i++) //percorrer o vetor
+            double media = 0;
+            foreach (double nota in Notas ) 
             {
-                soma += Notas[i]; //acumular as notas
+                media += nota; 
             }
-            return soma / Notas.Length; //retornar a media; Notas.Length = quantidade de notas
+            return media/4.0;
         }
-
-        //public double CalcularMedia()    OBS: Outra forma de fazer a media, Professor fez assim
-        //{
-        //    double media = 0;
-        //    foreach (double nota in Notas)
-        //    {
-        //        media += nota;
-        //    }
-        //}
 
         public string Mencao()
         {
-            if (CalcularMedia() >= 5)
-            {
-                return "Aprovado";
-            }
-            else
-            {
-                return "Reprovado";
-            }
+            //if (CalcularMedia() >= 5.0)
+            //{
+            //    return "Aprovado";
+            //}
+            //else
+            //{
+            //    return "Reprovado";
+            //}
+            return (CalcularMedia() >= 5.0) ? "Aprovado" : "Reprovado";
         }
 
     }
