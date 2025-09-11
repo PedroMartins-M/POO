@@ -11,6 +11,7 @@ namespace _02_Construtores
         static void Main(string[] args)
         {
             Quadrado quadrado = new Quadrado(5);
+            quadrado.ImprimirArea();
 
             Retangulo retangulo = new Retangulo(5, 5);
             retangulo.ImprimirArea();
@@ -29,16 +30,22 @@ namespace _02_Construtores
         //pode ser acessado apenas dentro da classe
         private int Lado;
 
-
-        public Quadrado(int lado)
+        //Overload (Sobrecarga) de Construtor
+        //Declarar mais de um construtor com a lista de argumentos diferentes
+        // Construtor não tem retorno
+        public Quadrado() : this(5) // Quando não for passado nenhum valor, o lado será 5
         {
-            Lado = lado;
+            //this.Lado = 5;  
+
         }
 
-        public Quadrado()
+        //Construtor serve para instanciar o objeto e inicializar os atributos
+        public Quadrado(int Lado)
         {
-            this.Lado = 0;
+            //Acessando o atributo Lado da classe
+            this.Lado = Lado;
         }
+
 
         //O construtor serve para instanciar o objeto e Inicializae os atributos
         public int CalculaArea()
@@ -48,7 +55,7 @@ namespace _02_Construtores
 
         public void ImprimirArea()
         {
-            Console.WriteLine($"Quadrado com lado de {Lado} possui uma área de {CalculaArea()}");
+            Console.WriteLine($"Quadrado com {Lado} lados possui uma área de {CalculaArea()}");
         }
     }
 
