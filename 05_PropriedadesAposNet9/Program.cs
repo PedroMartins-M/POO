@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _03_Propriedades
+namespace _05_PropriedadesAposNet9
 {
     internal class Program
     {
@@ -64,11 +64,11 @@ namespace _03_Propriedades
 
     public class Conta
     {
-        private string numero;
+        //private string numero;
         
         public string Numero { get; }
 
-        private string nome;
+        //private string nome;
 
         public string Nome { get; set; }
 
@@ -131,7 +131,7 @@ namespace _03_Propriedades
 
         public Conta(string numero)
         {
-            this.numero = numero;
+            this.Numero = numero;
         }
     }
 }
