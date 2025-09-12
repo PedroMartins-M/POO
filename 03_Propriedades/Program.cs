@@ -14,7 +14,7 @@ namespace _03_Propriedades
         {
             Conta conta = new Conta("346-45");
 
-            //conta.Nome = "Pedro Martins de Moraes";
+            conta.setNome ("Pedro Martins de Moraes");
 
             //Não é possivel atrbuir o valor em atributo privado
             //conta.Numero = "19766";
@@ -66,7 +66,7 @@ namespace _03_Propriedades
     {
         private string Numero;
         
-        private string Nome;
+        private string nome;
 
         //public decimal Saldo;
         //Transformar a conta Saldo privado
@@ -90,12 +90,12 @@ namespace _03_Propriedades
 
         public string getNome()
         {
-            return Nome;
+            return nome;
         }
 
         public void setNome(string nome)
         {
-            this.setNome( nome );
+            this.nome = nome;
         }
         
         public void Depositar(decimal valor)
