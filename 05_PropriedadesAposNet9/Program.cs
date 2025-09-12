@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _04_PropriedadesAteNet8
+namespace _03_Propriedades
 {
     internal class Program
     {
