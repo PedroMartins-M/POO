@@ -5,9 +5,9 @@ using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using _06_Calendario.Properties;
+using _07_CalendarioComFeriado;
 
-namespace _06_Calendario
+namespace _07_Calendario
 {
     internal class Program
     {
@@ -22,7 +22,6 @@ namespace _06_Calendario
             {
                 calendario = new Calendario(ano, mes);
                 calendario.ImprimirCalendario();
-
                 Console.WriteLine("\n\n");
             }
 
