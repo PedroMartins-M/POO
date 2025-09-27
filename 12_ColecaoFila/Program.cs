@@ -51,6 +51,17 @@ namespace _12_ColecaoFila
             {
                 string atendido = fila.Dequeue();
                 Console.WriteLine($"Senha {contador}: {atendido} foi atendido");
+
+                if (fila.Count > 0)
+                {
+                    Console.Write("Ainda aguardando: ");
+                    foreach (string restante in fila)
+                    {
+                        Console.Write(restante + ", ");
+                    }
+                    Console.WriteLine("\n");
+                }
+
                 contador++;
             }
 
