@@ -25,7 +25,7 @@ namespace _13_colecaoPilha
             numeros.Push(90);
             numeros.Push(100);
 
-            Console.WriteLine("Ultimo número inserido: " + numeros.Peek());
+            Console.WriteLine("- Ultimo número inserido: " + numeros.Peek());
 
         }
     }
