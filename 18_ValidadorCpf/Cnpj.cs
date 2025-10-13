@@ -48,6 +48,7 @@ namespace _18_ValidadorCpf
 
             private int CalculaDV(string cnpj, int qtdeNumeros, int peso)
             {
+            //Calcula números do Cnpj
                 int soma = 0;
                 char[] cnpjVetor = cnpj.ToCharArray();
 
