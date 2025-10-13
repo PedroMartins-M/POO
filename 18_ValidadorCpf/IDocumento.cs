@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace _18_ValidadorCpf
 {
-    internal class IDocumento
+    internal interface IDocumento
     {
+        string Numero { get; }
+        bool Validar();
     }
 }

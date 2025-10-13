@@ -9,16 +9,45 @@ namespace _18_ValidadorCpf
 {
     internal class Cpf : IDocumento
     {
-        public string Numero { get; private set; }
+        public string Numero { get; }
 
         public Cpf(string numero)
         {
-            numero = Regex.Replace(numero, "[^0-9]", "");
+            // 1 - Eliminar caractres não numéricos
+            this.Numero = Regex.Replace(numero, "[^0-9]", "");
         }
 
+        public bool Validar()
+        {
+            // 2 - Validar se tem 11 digitos
+            if (this.Numero.Length != 11)
+                return false;
 
+            // 3- Validas CPFs com todos os números iguais
+            if (this.Numero.Distinct().Count() == 1)
+                return false;
 
-        public static int CalculaDV(string cpf, int qtdeNumeros, int peso)
+            //4 - Cálculo do 1º Digito verificador            
+            int digX = CalculaDV(this.Numero, 9, 10);
+
+            //5 - Cálculo do 2º Digito Verificador            
+            int digY = CalculaDV(this.Numero, 10, 11);
+
+            //6 - Comparar os dígitos
+            if (
+                int.Parse(this.Numero[9].ToString()) == digX &&
+                int.Parse(this.Numero[10].ToString()) == digY
+               )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private int CalculaDV(string cpf, int qtdeNumeros, int peso)
         {
             int soma = 0;
             char[] cpfVetor = cpf.ToCharArray();
